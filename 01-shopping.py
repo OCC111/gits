@@ -1,15 +1,15 @@
 import random 
 import time 
 list1=[]   #大列表，存储下面小列表的数据
-
 while True:
 	print('-'*40)
 	print('$'*40)
 	print('欢迎来到加尔商超管理系统')
-	print('1.添加商品\n2.修改商品\n3.删除商品\n4.退出系统\n5.商超娱乐系统')
+	print('1.添加商品\n2.修改商品\n3.删除商品\n4.退出系统\n5.商超娱乐系统\n6.幸运宝箱')
 	print('$'*40)
 	print('-'*40)
 	list2=[]    #此为小列表，存储下面的内容
+	list2=['谢谢参与','谢谢参与','Macbook Air','至高之拳-李青','西部牛仔-亚索','神王-德玛西亚之力','神王-诺克萨斯','勇敢的心-德莱厄斯','神王-德玛西亚之力-三天','神王-诺克萨斯-三天','任性学霸-艾克','制胜金靴-李青','制胜金靴-李青-三天','小红帽,安妮-三天','小红帽,安妮'] 
 	sys = int(input('请输入要进行的程序:'))
 	if sys == 1:   #添加商品
 		time.sleep(2)
@@ -80,23 +80,41 @@ while True:
 				time.sleep(2)
 				print('欢迎来到猜数字!!!')
 				a = 0
-				for a in range(1,5):
+				for a in range(1,101):
 					pc2=random.randint(1,100)
 					users = int(input('输入一个数字:'))
 					if users == pc2:
 						time.sleep(2)
 						print('Wow,居然被你猜到了!')
 						continue
-					elif users != pc2:
-						print('再来一次吧！')
+					elif users > pc2:
+						print('数大了,再来一次吧!')
+						print('哈哈,答案竟是:%d'% pc2)
+						continue
+					elif users < pc2:
+						print('数小了,再来一次吧!')
+						
+						print('哈哈,答案竟是:%d'% pc2)
 						continue
 					elif pc2 == 77:
 						time.sleep(2)
 						return a
 				a += 1
-						
-					
 		game()
+
+	elif sys == 6:
+		print('这里有你想要的道具~')
+		user4 = input('是否抽奖?(y/n):')
+		if user4 == 'y':			
+			print('祝您抽到极品道具!!!')
+			time.sleep(3)
+			print('即将揭晓答案～')
+			pc3=random.sample(list2,1)	
+			print('%s'% pc3)
+			continue	
+		elif user4 == 'n':
+			break			
+					
 
 
 				
