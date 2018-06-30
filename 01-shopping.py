@@ -1,5 +1,5 @@
-import random 
-import time 
+import random #定义一个随机函数
+import time   #定义一个时间函数
 list1=[]   #大列表，存储下面小列表的数据
 while True:
 	print('-'*40)
@@ -59,9 +59,9 @@ while True:
 			if game1 == 1:
 				time.sleep(2)
 				print('欢迎来到猜拳大世界!')
-				pc=random.randint(1,3)
 				i = 1
 				for i in range(1,4):  #for循环，让猜拳只进行四次，之后退出系统
+					pc=random.randint(1,3)
 					user = int(input('1.石2.刀3.布请输入序号:'))
 					if (user == 1 and pc == 2)or(user == 2 and pc == 3)or(user == 3 and pc == 1):
 						time.sleep(2)
@@ -80,7 +80,7 @@ while True:
 				time.sleep(2)
 				print('欢迎来到猜数字!!!')
 				a = 0
-				for a in range(1,101):
+				for a in range(1,101):  #随机1~100
 					pc2=random.randint(1,100)
 					users = int(input('输入一个数字:'))
 					if users == pc2:
@@ -99,6 +99,8 @@ while True:
 					elif pc2 == 77:
 						time.sleep(2)
 						return a
+					else:
+						continue
 				a += 1
 		game()
 
@@ -109,13 +111,22 @@ while True:
 			print('祝您抽到极品道具!!!')
 			time.sleep(3)
 			print('即将揭晓答案～')
-			pc3=random.sample(list2,1)	
+			pc3=random.sample(list2,1)	#在list2中随机抽取一个
 			print('%s'% pc3)
 			continue	
 		elif user4 == 'n':
-			break			
-					
-
+			time.sleep(1)
+			print('离别之前你必须进行一个游戏!')
+			i = 0
+			while i <= 10:
+				time.sleep(1)
+				shu=random.randint(1,10)
+				print('数字是:%d'% shu)
+				if shu == 8:
+					break
+			i += 1
+	else:
+		continue
 
 				
 						
